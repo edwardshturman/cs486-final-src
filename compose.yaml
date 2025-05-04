@@ -1,0 +1,23 @@
+name: cs486-final
+
+services:
+  frontend:
+    build: ./frontend/
+    ports:
+      - "3001:3001"
+    environment:
+      BACKEND_URL: ${BACKEND_URL}
+    depends_on:
+      backend:
+        condition: service_healthy
+  backend:
+    build: ./backend/
+    ports:
+      - "8081:8081"
+    environment:
+      BACKEND_URL: ${BACKEND_URL}
+    healthcheck:
+      test: curl http://backend:8081
+      timeout: 10s
+      interval: 1s
+      retries: 10
