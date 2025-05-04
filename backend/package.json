@@ -1,0 +1,19 @@
+{
+  "name": "cs486-final-backend",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "serve": "bun run src/index.ts",
+    "test": "bun test",
+    "preserve": "bun run test && bun run migrate",
+    "migrate": "dotenv -e ./.env prisma migrate dev"
+  },
+  "dependencies": {
+    "@prisma/client": "6.4.1",
+    "hono": "4.7.2"
+  },
+  "devDependencies": {
+    "@types/bun": "1.2.4",
+    "dotenv-cli": "8.0.0",
+    "prisma": "6.4.1"
+  }
+}

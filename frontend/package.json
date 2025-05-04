@@ -1,0 +1,27 @@
+{
+  "name": "cs486-final-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack --port 3001",
+    "lint": "next lint",
+    "build": "next build",
+    "prestart": "bun test",
+    "start": "PORT=3001 next start"
+  },
+  "dependencies": {
+    "next": "15.2.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "typescript": "5.8.2",
+    "@types/bun": "1.2.4",
+    "@types/node": "22.13.9",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "eslint": "9.21.0",
+    "eslint-config-next": "15.2.1",
+    "@eslint/eslintrc": "^3"
+  }
+}
