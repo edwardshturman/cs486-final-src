@@ -2,7 +2,11 @@ import { handle } from "hono/vercel"
 import { type Context, Hono } from "hono"
 import type { BlankEnv, BlankInput } from "hono/types"
 
-const app = new Hono()
+export const config = {
+  runtime: "edge"
+}
+
+const app = new Hono().basePath("/api")
 
 app.get("/", (c: Context<BlankEnv, "/", BlankInput>) => {
   return c.json({ message: "Hello Hono!" })
@@ -18,14 +22,4 @@ app.get("/", (c: Context<BlankEnv, "/", BlankInput>) => {
 //   return c.json({ message: "Seeded events" })
 // })
 
-export const appEntry = {
-  port: 8081,
-  fetch: app.fetch
-}
-
-const handler = handle(app)
-export const GET = handler
-export const POST = handler
-export const PATCH = handler
-export const PUT = handler
-export const OPTIONS = handler
+export default handle(app)
