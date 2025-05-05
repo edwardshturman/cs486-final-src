@@ -1,4 +1,4 @@
-import app from "@/src"
+import app from "@/api"
 import { describe, expect, it } from "bun:test"
 
 describe("Test API from backend", () => {

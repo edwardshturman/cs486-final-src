@@ -1,10 +1,9 @@
 import { Hono } from "hono"
-import { cors } from "hono/cors"
-import { getEvents, seed } from "@/src/db"
+import { handle } from "hono/vercel"
+import { getEvents, seed } from "@/api/db"
 
 const app = new Hono()
 
-app.use("/", cors()) // TODO: restrict origin based on ENV
 app.get("/", (c) => {
   return c.json({ message: "Hello Hono!" })
 })
@@ -23,3 +22,10 @@ export default {
   port: 8081,
   fetch: app.fetch
 }
+
+const handler = handle(app)
+export const GET = handler
+export const POST = handler
+export const PATCH = handler
+export const PUT = handler
+export const OPTIONS = handler
