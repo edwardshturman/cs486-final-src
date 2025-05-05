@@ -18,7 +18,7 @@ app.get("/", (c: Context<BlankEnv, "/", BlankInput>) => {
 //   return c.json({ message: "Seeded events" })
 // })
 
-export default {
+export const appEntry = {
   port: 8081,
   fetch: app.fetch
 }
