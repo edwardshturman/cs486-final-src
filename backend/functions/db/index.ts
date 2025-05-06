@@ -27,5 +27,5 @@ export async function seed() {
 }
 
 export async function getEvents() {
-  return prisma.event.findMany()
+  return await prisma.event.findMany()
 }
