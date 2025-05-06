@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "cs486-final-backend",
+      "name": "cs486-final-backend-registration",
       "dependencies": {
         "@prisma/client": "6.4.1",
         "dotenv": "^16.5.0",
